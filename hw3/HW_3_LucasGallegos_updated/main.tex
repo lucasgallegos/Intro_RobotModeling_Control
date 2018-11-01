@@ -1,0 +1,106 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts, multirow, graphicx, float}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{Problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{Solution}[2][Solution]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2}]}{\end{trivlist}}
+
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+%\renewcommand{\qedsymbol}{\filledbox}
+ 
+\title{Chapter 4/5 Homework 3}%replace X with the appropriate number
+\author{Lucas Gallegos\\ %replace with your name
+ME 397 - Introduction to Robot Modeling and Control} %Course title
+\maketitle
+ 
+\begin{Problem}{1} 
+
+Derive the Jacobian for your previous RRP robot symbolically.
+
+\begin{Solution}{}
+\end{Solution}
+
+
+
+$J = $\left(\begin{array}{ccc} -d_{3}\,\cos\left(\theta _{2}\right)\,\sin\left(\theta _{1}\right) & -d_{3}\,\cos\left(\theta _{1}\right)\,\sin\left(\theta _{2}\right) & \cos\left(\theta _{1}\right)\,\cos\left(\theta _{2}\right)\\ d_{3}\,\cos\left(\theta _{1}\right)\,\cos\left(\theta _{2}\right) & -d_{3}\,\sin\left(\theta _{1}\right)\,\sin\left(\theta _{2}\right) & \cos\left(\theta _{2}\right)\,\sin\left(\theta _{1}\right)\\ 0 & d_{3}\,\cos\left(\theta _{2}\right) & \sin\left(\theta _{2}\right)\\ 0 & \sin\left(\theta _{1}\right) & 0\\ 0 & -\cos\left(\theta _{1}\right) & 0\\ 1 & 0 & 0 \end{array}\right)
+
+\begin{itemize}
+\item The DH parameters for this problem were found in the previous homework assignment. Using these DH Parameters, along with equations in the textbook, I solved the forward kinematics symbolically to compute the Jacobian Matrix symbolically. This can be found in the MATLAB script titled "hw3 rrp symbolic.m".
+\end{itemize}
+
+\end{Problem}
+
+\pagebreak
+
+\begin{Problem}{2}
+Derive the Jacobian for a planar RRR manipulator.
+
+\begin{Solution}{}
+\end{Solution}
+
+\footnotesize
+\setlength{\arraycolsep}{2.5pt}
+\medmuskip = 1mu % default: 4mu plus 2mu minus 4mu
+
+
+$J=$\left(\begin{array}{ccc} -L_{2}\,\sin\left(\theta _{1}+\theta _{2}\right)-L_{1}\,\sin\left(\theta _{1}\right)-L_{3}\,\sin\left(\theta _{1}+\theta _{2}+\theta _{3}\right) & -L_{2}\,\sin\left(\theta _{1}+\theta _{2}\right)-L_{3}\,\sin\left(\theta _{1}+\theta _{2}+\theta _{3}\right) & -L_{3}\,\sin\left(\theta _{1}+\theta _{2}+\theta _{3}\right)\\ L_{2}\,\cos\left(\theta _{1}+\theta _{2}\right)+L_{1}\,\cos\left(\theta _{1}\right)+L_{3}\,\cos\left(\theta _{1}+\theta _{2}+\theta _{3}\right) & L_{2}\,\cos\left(\theta _{1}+\theta _{2}\right)+L_{3}\,\cos\left(\theta _{1}+\theta _{2}+\theta _{3}\right) & L_{3}\,\cos\left(\theta _{1}+\theta _{2}+\theta _{3}\right)\\ 0 & 0 & 0\\ 0 & 0 & 0\\ 0 & 0 & 0\\ 1 & 1 & 1 \end{array}\right)
+
+\begin{itemize}
+\item Using the DH Parameters for a planar RRR robot shown in Table 1, along with equations in the textbook, I solved the forward kinematics symbolically to compute the Jacobian Matrix symbolically. This can be found in the MATLAB script titled "hw3 rrr symbolic.m".
+\end{itemize}
+
+\begin{table}
+\caption{DH Parameters for planar RRR Robot}
+\begin{center}
+\begin{tabular}{ c| c c c c }
+ & $\theta$ & d & a & $\alpha$ \\ 
+ \hline
+ $A_1$ & $\theta_1$\textsuperscript{*} & 0 & $a_1$ & 0 \\  
+ $A_2$ & $\theta_2$\textsuperscript{*} & 0 & $a_2$ & 0 \\
+ $A_3$ & $\theta_3$\textsuperscript{*} & 0 & $a_3$ & 0
+\end{tabular}
+\end{center}
+\end{table}
+
+\end{Problem}
+
+\pagebreak
+
+\begin{Problem}{3}
+Animate a planar RRR robot and the RRP and 7DOF robots from the previous homework assignment using any trajectory.
+
+\begin{Solution}{}
+\end{Solution}
+
+\begin{itemize}
+\item I employed a quintic polynomial trajectory. See the attached .avi videos.
+\end{itemize}
+
+\end{Problem}
+
+
+
+ 
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
